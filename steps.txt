@@ -1,0 +1,4 @@
+Sample of Provider Pattern:
+
+1. create stump with top Level -> Level 3 hierarchy (see ProviderPattern.png))
+
