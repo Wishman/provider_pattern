@@ -2,3 +2,10 @@ Sample of Provider Pattern:
 
 1. create stump with top Level -> Level 3 hierarchy (see ProviderPattern.png))
 
+2. create data bit
+    2.1 add provider package and import into main.dart
+    2.2 create final String var in myApp
+    2.3 add data to AppBar
+3. provider version read only
+    3.1 wrap MaterialApp widget in Provider Widget (use create instead of builder as per 4.0)
+    3.2 read data in Level3 with Provider.of
