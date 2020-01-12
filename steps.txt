@@ -1,4 +1,4 @@
-Sample of Provider Pattern:
+Sample of Provider Pattern - NOT WORKING due to provider 4.0 issues
 
 1. create stump with top Level -> Level 3 hierarchy (see ProviderPattern.png))
 
@@ -9,3 +9,16 @@ Sample of Provider Pattern:
 3. provider version read only
     3.1 wrap MaterialApp widget in Provider Widget (use create instead of builder as per 4.0)
     3.2 read data in Level3 with Provider.of
+
+4. replace read with multiple updates (see ProviderPattern.png):
+    -- prep
+    4.1 (a&b) add class MyText and add MyText as title: into AppBar
+    4.2 (a&b) add class myTextField and add it as child to Level 2 (wrap in column)
+
+    -- provider pattern:
+    4.3 create class Data extends ChangeNotifier and move data into Data() and remove final
+    4.4 in MyApp replace Provider with ChangeNotifierProvider that returns Data() not data
+    4.5 in Provider.of in Level3 replace <String> with <Data> and add .data
+    4.6 add same to MyText
+    4.7 add func changeString() in Data class and ADD NOTIFYLISTENERS!!!
+    4.8 in MyTextField add onChanged: and add Provider.of with .changeString!
